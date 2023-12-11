@@ -49,23 +49,10 @@
     color: #39a9db;
 }
 
-.submit-button-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    height: 0cm;
-}
 
 .playlist-heading {
     font-size: 85px;
     font-weight: bolder;
-}
-
-.search-container {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    margin-top: 20px;
 }
 
 .search-bar {
@@ -75,10 +62,10 @@
 
 .form-inline {
     display: flex;
+    justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 10cm;
     margin: 0 auto;
-    margin-top: 3px;
 }
 
 .search-type-button {
@@ -104,8 +91,13 @@
     color: #fff;
     border-color: #007bff;
     padding: 10px 20px;
+    display: flex;
     border-radius: 2px;
     cursor: pointer;
     height: 40px;
-    margin-top: 3.5px;
+    flex-shrink: 0;
+}
+
+.test {
+    margin-top: 30px;
 }

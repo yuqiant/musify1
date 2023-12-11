@@ -98,7 +98,7 @@ const Dashboard = () => {
         navigate(`/edit-playlist/${playlistId}`);
     };
 
-
+    console.log(userData.role);
 
     return (
         <div>
