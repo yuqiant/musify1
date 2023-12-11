@@ -1,0 +1,128 @@
+/* UserTable.css */
+
+/* General table styles within .testgrid */
+.testgrid .table {
+    width: 100%;
+    max-width: 900px;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+/* Table headers inside .testgrid */
+.testgrid th {
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+    padding: 12px;
+    border-right: none;
+    border-left: none;
+}
+
+/* Table data cells inside .testgrid */
+.testgrid td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    border-right: none;
+    border-left: none;
+}
+
+/* Input fields within .testgrid */
+.testgrid input {
+    padding: 10px;
+    width: 100%;
+    margin: 5px 20px 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Dropdown select within .testgrid */
+.testgrid select {
+    padding: 10px;
+    width: 100%;
+    margin: 4px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    border-right: none;
+    border-left: none;
+}
+
+/* Button styles within .testgrid */
+.testgrid .btn {
+    border: none;
+    padding: 10px;
+    margin: 4px 0;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+}
+
+/* Icon styles within buttons in .testgrid */
+.testgrid .btn .icon {
+    font-size: 20px;
+}
+
+/* Link styles in .testgrid */
+.testgrid .link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.testgrid .link:hover {
+    text-decoration: underline;
+}
+
+/* Headings inside .testgrid */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    
+}
+
+/* Responsive design for smaller screens within .testgrid */
+@media (max-width: 768px) {
+    .testgrid .table {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    .testgrid th, .testgrid td {
+        padding: 8px;
+        border-right: none;
+    }
+
+    .testgrid input, .testgrid select {
+        width: 90%;
+    }
+}
+
+/* Specific button styles within .testgrid */
+.testgrid .btn-edit {
+    background-color: rgb(136, 156, 197);
+}
+
+.testgrid .btn-edit:hover {
+    background-color: rgb(113, 129, 162);
+}
+
+.testgrid .btn-delete {
+    background-color: rgb(241, 141, 141);
+    border-color: rgb(255, 174, 174);
+}
+  
+.testgrid .btn-delete:hover {
+    background-color: darkred;
+    border-color: darkred;
+}
+  
+.testgrid .link-no-underline {
+    text-decoration: none;
+}
+
+.testgrid .link-no-underline:hover {
+    text-decoration: none;
+    
+}

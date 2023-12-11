@@ -1,0 +1,63 @@
+.wd-navigation {
+    background-color: lightgray;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    
+}
+
+.wd-navigation .list-group-item {
+    display: inline-block;
+    border-radius: 0;
+    color: BLACK;
+}
+
+.wd-navigation .menu {
+    padding-right: 50px;
+}
+
+.wd-navigation a {
+    padding: 15px;
+    margin-bottom: -12px;
+    font-size: em;
+    text-align: center;
+    background-color: GRAY;
+    border: none;
+    display: block;
+    color: white;
+    /* Text color */
+    text-decoration: none;
+    width: 3cm;
+}
+
+.wd-navigation a.active {
+    background-color: white;
+    color: black;
+}
+
+.list-group-item {
+    color: white;
+    /* Set default text color to white */
+    padding: 5px 10px;
+}
+
+/* Responsive adjustments (if needed) */
+@media (max-width: 600px) {
+    .wd-navigation a {
+        padding: 5px;
+        font-size: 0.6em;
+    }
+}
+
+.bold-left-align {
+    font-weight: bold;
+    text-align: left;
+    padding-left: 50px;
+    font-size: 1.7em;
+    margin-top: 10px;
+}

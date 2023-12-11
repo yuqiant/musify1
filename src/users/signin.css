@@ -1,0 +1,43 @@
+.signin-heading {
+    font-size: 70px;
+    text-align: center;
+}
+
+.Signin-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    min-height: 70vh;
+}
+
+.signin-heading {
+    font-size: 60px;
+    margin-bottom: 200px;
+    margin-right: -160px;
+}
+
+.signin-input {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.signin-btn {
+    margin-top: 100px;
+    margin-left: -200px;
+    padding: 10px;
+    width: 100px; 
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.signup-btn {
+    margin-top: 100px;
+    margin-left: 0px;
+    padding: 10px;
+    width: 100px; 
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}

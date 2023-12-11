@@ -1,0 +1,32 @@
+.account-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This ensures horizontal centering of children */
+    justify-content: center; /* This ensures vertical centering */
+    width: 100%; /* Takes the full width */
+    max-width: 800px; /* Adjust this as necessary */
+    margin: auto; /* Centers the section within its parent */
+    min-height: 70vh; /* Adjust this as necessary */
+}
+
+.account-form {
+    width: 100%; /* Takes the full width of its parent */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This ensures horizontal centering of children */
+}
+
+.account-row,
+.account-actions,
+.special-button,
+.button-container {
+    width: 100%; /* Takes the full width of its parent */
+    display: flex;
+    justify-content: center; /* Centers children horizontally */
+    align-items: center; /* Centers children vertically */
+}
+
+/* Remove any specific margin that might be causing the shift */
+.save-btn {
+    margin-left:  630px;
+}

@@ -1,0 +1,86 @@
+/* Results.css */
+
+.results-heading {
+    font-size: 60px;
+    margin-bottom: 40px;
+    text-align: center; /* Center the heading text */
+    text-align: center; /* Center text within cells */
+
+}
+
+.Results-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    width: 100%;
+    text-align: center; /* Center text within cells */
+
+}
+
+/* Button styles */
+.results-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin-top: 20px;
+    margin-right: 10px;
+    width: auto; /* Auto width to fit content */
+    box-sizing: border-box;
+    display: block; /* For buttons to take the full available width */
+    margin: 10px auto; /* Center button horizontally */
+    text-align: center; /* Center text within cells */
+
+}
+
+/* Table styles */
+.table {
+    width: 70%; /* Match input width for consistency */
+    margin-bottom: 20px; /* Space below the table */
+    margin-top: 20px; /* Space above the table */
+    margin-left: auto; /* Center the table horizontally */
+    margin-right: auto; /* Center the table horizontally */
+    border-collapse: collapse; /* Collapse borders */
+    text-align: center; /* Center text within cells */
+}
+
+tr, td {
+    text-align: center; /* Center text within cells */
+    padding: 10px; /* Padding within cells for spacing */
+    border: 1px solid #ddd; /* Light border for each row */
+}
+
+/* Additional styles if needed */
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Special styles for removing underline from links */
+.link-no-underline {
+    text-decoration: none;
+}
+
+.link-no-underline:hover {
+    text-decoration: underline;
+}
+
+/* Adjusting the button inside table cells */
+.table .btn-view-details {
+    margin: auto; /* Center the button */
+    display: block; /* To make margin auto effective */
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin-top: 20px;
+    width: auto; /* Auto width to fit content */
+    box-sizing: border-box;
+    display:grid ;
+    margin-left: auto;
+
+}

@@ -1,0 +1,49 @@
+.account-heading {
+    font-size: 60px;
+    text-align: center; /* Center align the heading */
+}
+
+.Account-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+.account-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start of the flex container */
+    justify-content: center; /* Center items vertically */
+    width: 70%; /* Takes the full width */
+}
+
+.account-row {
+    display: flex; /* Align label and input side by side */
+    justify-content: flex-start; /* Align items to the start */
+    align-items: center; /* Vertically center align items */
+    width: 100%; /* Ensure this is 100% */
+    margin-bottom: 15px; /* Space between rows */
+}
+
+label {
+    width: 20%; /* Set a specific width for labels */
+    margin-right: 10px; /* Space between the label and the input */
+    font-weight: bold;
+    text-align: left; /* Right align the label text */
+}
+
+.account-input {
+    padding: 10px;
+    width: 80%; /* Input takes the remaining space */
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+/* Rest of the CSS */
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,44 @@
+.admin-dashboard {
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.admin-dashboard form {
+    margin-bottom: 20px;
+}
+
+.admin-dashboard input {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.admin-dashboard button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.admin-dashboard button:hover {
+    background-color: #0056b3;
+}
+
+.admin-dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-dashboard th, .admin-dashboard td {
+    padding: 10px;
+    border: 1px solid #ffffff;
+    text-align: left;
+}
+
+.admin-dashboard th {
+    background-color: #dddddd;
+}

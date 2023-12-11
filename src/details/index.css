@@ -1,0 +1,53 @@
+.song-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    /* Adjust the height as necessary */
+}
+
+.detail-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.detail-row label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.detail {
+    background-color: #f8f9fa; /* Light grey background to mimic an input field */
+    border: 1px solid #ced4da; /* Border to mimic an input field */
+    border-radius: 0.25rem; /* Rounded corners to mimic an input field */
+    padding: 1rem 1rem; /* Padding to mimic an input field */
+    width: 100%;
+    max-width: 500px; /* Adjust as needed */
+    text-align: left;
+}
+
+.select-playlist-container {
+    height: 8%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-playlist-container select,
+.select-playlist-container button {
+    padding: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    height: 100%;
+    margin-top: 21px;
+}
+
+button {
+    cursor: pointer;
+}

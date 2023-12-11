@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    text-align: center;
+}
+
+.App-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    background-color: #282c34;
+    padding: 1rem;
+    color: white;
+}
+
+.App-nav h1 {
+    font-size: 1.5rem;
+}
+
+.App-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.App-nav a:hover {
+    text-decoration: underline;
+}
+
+.App-header {
+    color: white;
+    padding-top: 60px;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+.App-link:hover {
+    color: #39a9db;
+}
+
+.submit-button-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 0cm;
+}
+
+.playlist-heading {
+    font-size: 85px;
+    font-weight: bolder;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search-bar {
+    width: 500px;
+
+}
+
+.form-inline {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 3px;
+}
+
+.search-type-button {
+    font-size: 16px; /* Adjust the font size as needed */
+    padding: 10px 20px; /* Bigger button */
+    margin-right: 10px; /* Space between buttons */
+    border: 1px solid transparent;
+    background-color: #f8f9fa;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-type-button.active {
+    background-color: #007bff;
+    /* Bootstrap primary color */
+    color: #fff;
+    border-color: #007bff;
+}
+
+.btn-submit {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    height: 40px;
+    margin-top: 3.5px;
+}
