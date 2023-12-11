@@ -156,7 +156,7 @@ const Dashboard = () => {
             });
 
             // 将播放列表添加到用户的播放列表中
-            const updateResponse = await axios.post(`${BASE_API}/api/users/${userId}/playlists`, {
+            const updateResponse = await axios.put(`${BASE_API}/api/users/${userId}/playlists`, {
                 playlistId: createResponse.data._id,
                 name: createResponse.data.name,
                 songs: createResponse.data.songs
@@ -172,7 +172,7 @@ const Dashboard = () => {
             //     }))
             // };
 
-            setPlaylists([...playlists, updateResponse]);
+            setPlaylists([...playlists, newPlaylistForUser]);
 
             // 重置表单字段
             setPlaylistName('');

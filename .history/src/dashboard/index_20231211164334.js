@@ -163,16 +163,16 @@ const Dashboard = () => {
             });
 
             // 更新播放列表数组，但只包含 id、name 和 songs
-            // const newPlaylistForUser = {
-            //     id: createResponse.data._id,
-            //     name: createResponse.data.name,
-            //     songs: createResponse.data.songs.map(song => ({
-            //         id: song._id,
-            //         songName: song.songName
-            //     }))
-            // };
+            const newPlaylistForUser = {
+                id: createResponse.data._id,
+                name: createResponse.data.name,
+                songs: createResponse.data.songs.map(song => ({
+                    id: song._id,
+                    songName: song.songName
+                }))
+            };
 
-            setPlaylists([...playlists, updateResponse]);
+            setPlaylists([...playlists, newPlaylistForUser]);
 
             // 重置表单字段
             setPlaylistName('');
