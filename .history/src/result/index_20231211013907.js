@@ -36,12 +36,14 @@ function Results() {
                     setSearchResults(response.data);
                     console.log("Response data:", response.data);
                     console.log("search page authenticate:", isAuthenticated);
+                    // console.log("current authenticated:", isAuthenticated)
+
                 } else {
                     setSearchResults([response.data]);
                 }
             } catch (error) {
                 console.error('Search error:', error);
-                setSearchResults([]);
+                setSearchResults([]); // 在错误情况下设置为空数组
             }
         };
 

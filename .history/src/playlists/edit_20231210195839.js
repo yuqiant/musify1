@@ -8,16 +8,14 @@ const EditPlaylistPage = () => {
     const [playlistName, setPlaylistName] = useState('');
     const [playlistDescription, setPlaylistDescription] = useState('');
     const [playlistDetails, setPlaylistDetails] = useState({});
-    const BASE_API = process.env.REACT_APP_BASE_API_URL;
-
-    // const BASE_API_URL = 'http://localhost:4000';
+    const BASE_API_URL = 'http://localhost:4000';
     const navigate = useNavigate();
 
 
     useEffect(() => {
         const fetchPlaylistDetails = async () => {
             try {
-                const response = await axios.get(`${BASE_API}/playlists/${playlistId}`);
+                const response = await axios.get(`${BASE_API_URL}/playlists/${playlistId}`);
                 setPlaylistName(response.data.name);
                 setPlaylistDescription(response.data.description || '');
                 setPlaylistDetails(response.data);
@@ -32,7 +30,7 @@ const EditPlaylistPage = () => {
 
     const handleSave = async () => {
         try {
-            await axios.put(`${BASE_API}/playlists/${playlistId}`, {
+            await axios.put(`${BASE_API_URL}/playlists/${playlistId}`, {
                 name: playlistName,
                 description: playlistDescription
             });

@@ -10,6 +10,8 @@ function Home() {
     const [searchType, setSearchType] = useState('Songs'); // New state for search type
     const [searchResults, setSearchResults] = useState([]);
     const location = useLocation();
+
+    const REMOTE_API_URL = "http://localhost:4000/search";
     const navigate = useNavigate();
     const { isAuthenticated, userId } = useContext(AuthContext);
 

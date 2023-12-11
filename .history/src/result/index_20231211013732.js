@@ -9,8 +9,8 @@ import './index.css';
 function Results() {
     const location = useLocation();
     const BASE_API = process.env.REACT_APP_BASE_API_URL;
-    const RESULT_API = `${BASE_API}/search`;
-    // const REMOTE_API_URL = "http://localhost:4000/search";
+    const RESULT_API = `${BASE_API}/api/users`;
+    const REMOTE_API_URL = "http://localhost:4000/search";
     const [searchResults, setSearchResults] = useState([]);
     const navigate = useNavigate();
     const { isAuthenticated, userId } = useContext(AuthContext);
@@ -31,17 +31,19 @@ function Results() {
             try {
                 // const response = await axios.get(`${REMOTE_API_URL}?query=${query}&type=${type}`);
                 const encodedQuery = encodeURIComponent(query);
-                const response = await axios.get(`${RESULT_API}?query=${encodedQuery}&type=${type}`);
+                const response = await axios.get(`${REMOTE_API_URL}?query=${encodedQuery}&type=${type}`);
                 if (Array.isArray(response.data)) {
                     setSearchResults(response.data);
                     console.log("Response data:", response.data);
                     console.log("search page authenticate:", isAuthenticated);
+                    // console.log("current authenticated:", isAuthenticated)
+
                 } else {
                     setSearchResults([response.data]);
                 }
             } catch (error) {
                 console.error('Search error:', error);
-                setSearchResults([]);
+                setSearchResults([]); // 在错误情况下设置为空数组
             }
         };
 

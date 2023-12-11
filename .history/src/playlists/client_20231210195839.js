@@ -1,12 +1,11 @@
 
 import axios from 'axios';
-const BASE_API = process.env.REACT_APP_BASE_API_URL;
 
-// const BASE_API_URL = 'http://localhost:4000'; // Adjust accordingly
+const BASE_API_URL = 'http://localhost:4000'; // Adjust accordingly
 
 const getUserPlaylists = async (userId) => {
     try {
-        const response = await fetch(`${BASE_API}/users/${userId}/playlists`);
+        const response = await fetch(`${BASE_API_URL}/users/${userId}/playlists`);
         if (!response.ok) {
             throw new Error(`API call failed with status: ${response.status}`);
         }
@@ -19,7 +18,7 @@ const getUserPlaylists = async (userId) => {
 
 const getPlaylistDetails = async (playlistId) => {
     try {
-        const response = await fetch(`${BASE_API}/playlists/${playlistId}`);
+        const response = await fetch(`${BASE_API_URL}/playlists/${playlistId}`);
         if (!response.ok) {
             throw new Error(`API call failed with status: ${response.status}`);
         }
@@ -32,7 +31,7 @@ const getPlaylistDetails = async (playlistId) => {
 
 const deleteSongFromPlaylist = async (playlistId, songId) => {
     try {
-        const response = await axios.delete(`${BASE_API}/playlists/${playlistId}/songs/${songId}`);
+        const response = await axios.delete(`${BASE_API_URL}/playlists/${playlistId}/songs/${songId}`);
         if (response.status !== 200) {
             throw new Error(`API call failed with status: ${response.status}`);
         }

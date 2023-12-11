@@ -20,11 +20,12 @@ function SongDetails() {
     const BASE_API = process.env.REACT_APP_BASE_API_URL;
     // const REMOTE_API_URL = "http://localhost:4000";
     const goToDashboard = () => {
-        navigate('/dashboard');
+        navigate('/dashboard'); // 使用你的dashboard路由路径替换'/dashboard'
     };
 
 
     useEffect(() => {
+        // 定义一个异步函数
         const fetchSongDetails = async () => {
             try {
                 const songResponse = await axios.get(`${BASE_API}/details/${id}`);

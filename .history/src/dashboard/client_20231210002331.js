@@ -1,14 +1,11 @@
 import axios from 'axios';
 
-const BASE_API = process.env.REACT_APP_BASE_API_URL;
-const DASHBOARD_API = `${BASE_API}/api`;
-
-// const BASE_API_URL = 'http://localhost:4000/api'; // Adjust accordingly
+const BASE_API_URL = 'http://localhost:4000/api'; // Adjust accordingly
 
 // Function to add a new song
 export const addSong = async (songData) => {
     try {
-        const response = await axios.post(`${DASHBOARD_API}/songs`, songData);
+        const response = await axios.post(`${BASE_API_URL}/songs`, songData);
         return response.data;
     } catch (error) {
         throw error;
@@ -18,7 +15,7 @@ export const addSong = async (songData) => {
 // Function to retrieve all songs
 export const getAllSongs = async () => {
     try {
-        const response = await axios.get(`${DASHBOARD_API}/songs`);
+        const response = await axios.get(`${BASE_API_URL}/songs`);
         return response.data;
     } catch (error) {
         throw error;
@@ -28,7 +25,7 @@ export const getAllSongs = async () => {
 // Function to update a song
 export const updateSong = async (songId, songData) => {
     try {
-        const response = await axios.put(`${DASHBOARD_API}/songs/${songId}`, songData);
+        const response = await axios.put(`${BASE_API_URL}/songs/${songId}`, songData);
         return response.data;
     } catch (error) {
         throw error;
@@ -38,7 +35,7 @@ export const updateSong = async (songId, songData) => {
 // Function to delete a song
 export const deleteSong = async (songId) => {
     try {
-        const response = await axios.delete(`${DASHBOARD_API}/songs/${songId}`);
+        const response = await axios.delete(`${BASE_API_URL}/songs/${songId}`);
         return response.data;
     } catch (error) {
         throw error;

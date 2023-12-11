@@ -17,22 +17,22 @@ function SongDetails() {
     const [song, setSong] = useState(null);
     const [playlists, setPlaylists] = useState([]);
     const [selectedPlaylist, setSelectedPlaylist] = useState('');
-    const BASE_API = process.env.REACT_APP_BASE_API_URL;
-    // const REMOTE_API_URL = "http://localhost:4000";
+    const REMOTE_API_URL = "http://localhost:4000";
     const goToDashboard = () => {
-        navigate('/dashboard');
+        navigate('/dashboard'); // 使用你的dashboard路由路径替换'/dashboard'
     };
 
 
     useEffect(() => {
+        // 定义一个异步函数
         const fetchSongDetails = async () => {
             try {
-                const songResponse = await axios.get(`${BASE_API}/details/${id}`);
+                const songResponse = await axios.get(`${REMOTE_API_URL}/details/${id}`);
                 setSong(songResponse.data);
                 console.log("current authenticated:", isAuthenticated);
 
                 if (isAuthenticated && userId) {
-                    const playlistsResponse = await axios.get(`${BASE_API}/users/${userId}/playlists`);
+                    const playlistsResponse = await axios.get(`${REMOTE_API_URL}/users/${userId}/playlists`);
                     setPlaylists(playlistsResponse.data);
                     console.log("Response data:", playlistsResponse.data);
                 }
@@ -56,7 +56,7 @@ function SongDetails() {
         }
         console.log("song id is:", id);
         console.log("playlist id is:", selectedPlaylist);
-        axios.post(`${BASE_API}/playlists/${selectedPlaylist}/add-song`, { songId: id })
+        axios.post(`${REMOTE_API_URL}/playlists/${selectedPlaylist}/add-song`, { songId: id })
             .then(response => alert('Song added to your list!'))
             .catch(error => {
                 if (error.response) {
