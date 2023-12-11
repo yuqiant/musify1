@@ -18,7 +18,6 @@ const Dashboard = () => {
     const [playlistName, setPlaylistName] = useState('');
     const [description, setDescription] = useState('');
     const navigate = useNavigate();
-    const BASE_API = process.env.REACT_APP_BASE_API_URL || 'http://localhost:4000';
 
 
     useEffect(() => {
@@ -101,7 +100,30 @@ const Dashboard = () => {
         navigate(`/edit-playlist/${playlistId}`);
     };
 
+    // const handleCreatePlaylist = async () => {
+    //     if (!playlistName || !description) {
+    //         alert("Please enter both a name and a description for the playlist.");
+    //         return;
+    //     }
 
+    //     try {
+    //         const response = await axios.post(`${BASE_API}/api/users/${userId}/playlists`, {
+    //             name: playlistName,
+    //             description: description,
+    //         });
+
+    //         // 将新的播放列表添加到状态中
+    //         setPlaylists([...playlists, response.data]);
+    //         // 重置表单字段
+    //         setPlaylistName('');
+    //         setDescription('');
+
+    //         alert("Playlist created successfully!");
+    //     } catch (error) {
+    //         console.error('Error creating playlist:', error);
+    //         alert("There was an error creating the playlist.");
+    //     }
+    // };
 
     const handleCreatePlaylist = async () => {
         if (!playlistName || !description) {
@@ -115,6 +137,7 @@ const Dashboard = () => {
                 description: description,
             });
 
+            // 将新的播放列表添加到状态中
             setPlaylists([...playlists, response.data]);
             // 重置表单字段
             setPlaylistName('');

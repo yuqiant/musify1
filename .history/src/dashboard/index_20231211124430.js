@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthContext';
 import * as userClient from '../users/client'; // Adjust path as needed
@@ -15,10 +14,7 @@ const Dashboard = () => {
     const { userId } = useContext(AuthContext);
     const [userData, setUserData] = useState(null);
     const [playlists, setPlaylists] = useState([]);
-    const [playlistName, setPlaylistName] = useState('');
-    const [description, setDescription] = useState('');
     const navigate = useNavigate();
-    const BASE_API = process.env.REACT_APP_BASE_API_URL || 'http://localhost:4000';
 
 
     useEffect(() => {
@@ -101,8 +97,6 @@ const Dashboard = () => {
         navigate(`/edit-playlist/${playlistId}`);
     };
 
-
-
     const handleCreatePlaylist = async () => {
         if (!playlistName || !description) {
             alert("Please enter both a name and a description for the playlist.");
@@ -115,6 +109,7 @@ const Dashboard = () => {
                 description: description,
             });
 
+            // 将新的播放列表添加到状态中
             setPlaylists([...playlists, response.data]);
             // 重置表单字段
             setPlaylistName('');
@@ -129,26 +124,6 @@ const Dashboard = () => {
 
 
 
-    const renderCreatePlaylistForm = () => (
-        <div>
-            <h2>Create a new Playlist</h2>
-            <input
-                type="text"
-                placeholder="Playlist Name"
-                value={playlistName}
-                onChange={(e) => setPlaylistName(e.target.value)}
-            />
-            <textarea
-                placeholder="Description"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-            />
-            <button onClick={handleCreatePlaylist}>Create Playlist</button>
-        </div>
-    );
-
-
-
 
 
     return (
@@ -158,7 +133,6 @@ const Dashboard = () => {
             {userData.role === 'USER' && (
                 <div>
                     <h2>Your Playlists</h2>
-                    {renderCreatePlaylistForm()}
                     <div>
                         {playlists.map(playlist => (
                             <PlaylistComponent key={playlist._id}

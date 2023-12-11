@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthContext';
 import * as userClient from '../users/client'; // Adjust path as needed
@@ -15,10 +14,7 @@ const Dashboard = () => {
     const { userId } = useContext(AuthContext);
     const [userData, setUserData] = useState(null);
     const [playlists, setPlaylists] = useState([]);
-    const [playlistName, setPlaylistName] = useState('');
-    const [description, setDescription] = useState('');
     const navigate = useNavigate();
-    const BASE_API = process.env.REACT_APP_BASE_API_URL || 'http://localhost:4000';
 
 
     useEffect(() => {
@@ -101,31 +97,30 @@ const Dashboard = () => {
         navigate(`/edit-playlist/${playlistId}`);
     };
 
+    // const handleCreatePlaylist = async () => {
+    //     if (!playlistName || !description) {
+    //         alert("Please enter both a name and a description for the playlist.");
+    //         return;
+    //     }
 
+    //     try {
+    //         const response = await axios.post(`${BASE_API}/api/users/${userId}/playlists`, {
+    //             name: playlistName,
+    //             description: description,
+    //         });
 
-    const handleCreatePlaylist = async () => {
-        if (!playlistName || !description) {
-            alert("Please enter both a name and a description for the playlist.");
-            return;
-        }
+    //         // 将新的播放列表添加到状态中
+    //         setPlaylists([...playlists, response.data]);
+    //         // 重置表单字段
+    //         setPlaylistName('');
+    //         setDescription('');
 
-        try {
-            const response = await axios.post(`${BASE_API}/api/users/${userId}/playlists`, {
-                name: playlistName,
-                description: description,
-            });
-
-            setPlaylists([...playlists, response.data]);
-            // 重置表单字段
-            setPlaylistName('');
-            setDescription('');
-
-            alert("Playlist created successfully!");
-        } catch (error) {
-            console.error('Error creating playlist:', error);
-            alert("There was an error creating the playlist.");
-        }
-    };
+    //         alert("Playlist created successfully!");
+    //     } catch (error) {
+    //         console.error('Error creating playlist:', error);
+    //         alert("There was an error creating the playlist.");
+    //     }
+    // };
 
 
 
@@ -158,7 +153,6 @@ const Dashboard = () => {
             {userData.role === 'USER' && (
                 <div>
                     <h2>Your Playlists</h2>
-                    {renderCreatePlaylistForm()}
                     <div>
                         {playlists.map(playlist => (
                             <PlaylistComponent key={playlist._id}
