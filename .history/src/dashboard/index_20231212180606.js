@@ -109,6 +109,48 @@ const Dashboard = () => {
         }
 
         try {
+            // console.log('Creating playlist with:', {
+            //     userId,
+            //     name: playlistName,
+            //     description: description,
+            //     songs: []
+            // });
+
+            // const createResponse = await axios.post(`${BASE_API}/api/playlists`, {
+            //     userId,
+            //     name: playlistName,
+            //     description: description,
+            //     songs: []
+            // });
+
+
+            // const updateResponse = await axios.post(`${BASE_API}/api/users/${userId}/playlists`, {
+            //     userId: createResponse.data.userId,
+            //     playlistId: createResponse.data._id,
+            //     name: createResponse.data.name,
+            //     description: createResponse.data.description,
+            //     songs: createResponse.data.songs
+            // });
+
+
+            // const newPlaylistForUser = {
+            //     id: createResponse.data._id,
+            //     name: createResponse.data.name,
+            //     songs: createResponse.data.songs.map(song => ({
+            //         id: song._id,
+            //         songName: song.songName
+            //     }))
+            // };
+
+            // setPlaylists([...playlists, newPlaylistForUser]);
+
+            // // 重置表单字段
+            // setPlaylistName('');
+            // setDescription('');
+
+            // alert("Playlist created successfully!");
+
+
 
             // duplicate prob:
             const createResponse = await axios.post(`${BASE_API}/api/users/${userId}/playlists`, {
@@ -117,8 +159,10 @@ const Dashboard = () => {
                 songs: []
             });
 
+            // 更新前端的播放列表状态
             setPlaylists([...playlists, createResponse.data]);
 
+            // 重置表单字段
             setPlaylistName('');
             setDescription('');
 

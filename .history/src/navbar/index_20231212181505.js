@@ -25,10 +25,7 @@ const Navbar = () => {
             <p className="bold-left-align">Musify</p>
             <ul className="menu">
                 <li className="list-group-item">
-                    <NavLink 
-                        to="/home" 
-                        className={({ isActive }) => isActive ? 'active' : ''}
-                    >
+                    <NavLink to="/" activeClassName="active">
                         Home
                     </NavLink>
                 </li>

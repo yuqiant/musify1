@@ -52,14 +52,12 @@ function Home() {
                     ))}<br /><br />
                 </div>
                 <form onSubmit={handleSearchSubmit} className="form-inline">
-                    <div className="test">
                     <input
                         type="text"
                         className="form-control search-bar mb-2 mr-sm-2"
                         placeholder="Search"
                         value={searchTerm}
                         onChange={handleSearchChange} />
-                    </div>
                     <button type="submit" className="btn btn-primary btn-submit">Search</button>
                 </form>
                 <div className="search-results">
