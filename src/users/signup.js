@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import * as client from "./client";
+import './signup.css';
 
 function Signup() {
   const [error, setError] = useState("");
@@ -36,16 +37,18 @@ function Signup() {
 
 
   return (
-    <div>
-      <h1>Signup</h1>
+    <div className="Signup-container">
+      <h1 className="signup-heading">Signup</h1>
       {error && <div style={{ color: "red" }}>{error}</div>}
       <input
+        className="signup-input"
         name="username"
         placeholder="Username"
         value={user.username}
         onChange={handleChange}
       />
       <input
+        className="signup-input"
         name="password"
         type="password"
         placeholder="Password"
@@ -53,29 +56,32 @@ function Signup() {
         onChange={handleChange}
       />
       <input
+        className="signup-input"
         name="firstName"
         placeholder="First Name"
         value={user.firstName}
         onChange={handleChange}
       />
       <input
+        className="signup-input"
         name="lastName"
         placeholder="Last Name"
         value={user.lastName}
         onChange={handleChange}
       />
       <input
+        className="signup-input"
         name="email"
         placeholder="Email"
         value={user.email}
         onChange={handleChange}
       />
-      <select name="role" value={user.role} onChange={handleChange}>
+      <select className="signup-input" name="role" value={user.role} onChange={handleChange}>
         <option value="USER">User</option>
         <option value="DJ">DJ</option>
         <option value="ADMIN">Admin</option>
       </select>
-      <button onClick={signup}>Signup</button>
+      <button className="btn btn-primary signup-btn2" onClick={signup}>Signup</button>
       <div>
         Already have an account? <Link to="/signin">Sign In</Link>
       </div>
