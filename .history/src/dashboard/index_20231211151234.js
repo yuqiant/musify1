@@ -102,6 +102,7 @@ const Dashboard = () => {
     };
 
 
+
     const handleCreatePlaylist = async () => {
         if (!playlistName || !description) {
             alert("Please enter both a name and a description for the playlist.");
@@ -109,71 +110,22 @@ const Dashboard = () => {
         }
 
         try {
-            // console.log('Creating playlist with:', {
-            //     userId,
-            //     name: playlistName,
-            //     description: description,
-            //     songs: []
-            // });
-
-            // const createResponse = await axios.post(`${BASE_API}/api/playlists`, {
-            //     userId,
-            //     name: playlistName,
-            //     description: description,
-            //     songs: []
-            // });
-
-
-            // const updateResponse = await axios.post(`${BASE_API}/api/users/${userId}/playlists`, {
-            //     userId: createResponse.data.userId,
-            //     playlistId: createResponse.data._id,
-            //     name: createResponse.data.name,
-            //     description: createResponse.data.description,
-            //     songs: createResponse.data.songs
-            // });
-
-
-            // const newPlaylistForUser = {
-            //     id: createResponse.data._id,
-            //     name: createResponse.data.name,
-            //     songs: createResponse.data.songs.map(song => ({
-            //         id: song._id,
-            //         songName: song.songName
-            //     }))
-            // };
-
-            // setPlaylists([...playlists, newPlaylistForUser]);
-
-            // // 重置表单字段
-            // setPlaylistName('');
-            // setDescription('');
-
-            // alert("Playlist created successfully!");
-
-
-
-            // duplicate prob:
-            const createResponse = await axios.post(`${BASE_API}/api/users/${userId}/playlists`, {
+            const response = await axios.post(`${BASE_API}/api/users/${userId}/playlists`, {
                 name: playlistName,
                 description: description,
-                songs: []
             });
 
-            // 更新前端的播放列表状态
-            setPlaylists([...playlists, createResponse.data]);
-
+            setPlaylists([...playlists, response.data]);
             // 重置表单字段
             setPlaylistName('');
             setDescription('');
 
             alert("Playlist created successfully!");
-
         } catch (error) {
             console.error('Error creating playlist:', error);
             alert("There was an error creating the playlist.");
         }
     };
-
 
 
 
@@ -196,23 +148,6 @@ const Dashboard = () => {
     );
 
 
-    const handleDeletePlaylist = async (playlistId) => {
-        if (window.confirm('Are you sure you want to delete this playlist?')) {
-            try {
-                console.log("now the playlist id is:", playlistId);
-                await axios.delete(`${BASE_API}/api/playlists/${playlistId}`);
-                console.log("can i delete it?", playlists);
-                const updatedPlaylists = playlists.filter(p => p._id !== playlistId);
-                setPlaylists(updatedPlaylists);
-                alert('Playlist deleted successfully');
-            } catch (error) {
-                console.error('Error deleting playlist:', error);
-                alert('Failed to delete playlist');
-            }
-        }
-    };
-
-
 
 
 
@@ -230,7 +165,6 @@ const Dashboard = () => {
                                 playlist={playlist}
                                 onDeleteSong={handleDeleteSongFromPlaylist}
                                 onEditPlaylist={handleEditPlaylist}
-                                onDeletePlaylist={handleDeletePlaylist}
 
                             />
                         ))}
