@@ -7,7 +7,7 @@ import * as songClient from './client'; // Adjust path as needed
 import * as playlistClient from '../playlists/client';
 import PlaylistComponent from '../playlists/component';
 import AdminDashboard from './admindashboard';
-import "./admindashboard.css";
+import './index.css';
 import UserTable from "../users/table";
 
 
@@ -42,8 +42,6 @@ const Dashboard = () => {
                 }
             }
         };
-
-
         fetchUserData();
     }, [userId]);
 
@@ -130,27 +128,25 @@ const Dashboard = () => {
         }
     };
 
-
-
-
     const renderCreatePlaylistForm = () => (
-        <div>
+        <div className="dashboard-form">
             <h2>Create a new Playlist</h2>
             <input
+                className="dashboard-input"
                 type="text"
                 placeholder="Playlist Name"
                 value={playlistName}
                 onChange={(e) => setPlaylistName(e.target.value)}
             />
             <textarea
+                className="dashboard-input"
                 placeholder="Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
             />
-            <button onClick={handleCreatePlaylist}>Create Playlist</button>
+            <button className="btn3 btn-primary dashboard-btn" onClick={handleCreatePlaylist}>Create Playlist</button>
         </div>
     );
-
 
     const handleDeletePlaylist = async (playlistId) => {
         if (window.confirm('Are you sure you want to delete this playlist?')) {
@@ -170,32 +166,26 @@ const Dashboard = () => {
         }
     };
 
-
-
-
-
     return (
-        <div>
+        <div className="dashboard-section">
             <h1>Hello, <b>{userData.firstName}!</b></h1>
 
             {userData.role === 'USER' && (
-                <div>
+                <div className="user-playlists">
                     <h2>Your Playlists</h2>
-                    {renderCreatePlaylistForm()}
-                    <div>
+                    <div className="playlists-container">
                         {playlists.map(playlist => (
                             <PlaylistComponent key={playlist._id}
                                 playlist={playlist}
                                 onDeleteSong={handleDeleteSongFromPlaylist}
                                 onEditPlaylist={handleEditPlaylist}
                                 onDeletePlaylist={handleDeletePlaylist}
-
                             />
                         ))}
                     </div>
+                    {renderCreatePlaylistForm()}
                 </div>
             )}
-
             {userData.role === 'DJ' && (
                 <div className="admin-dashboard">
                     <h3>Song Management</h3>

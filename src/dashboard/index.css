@@ -1,0 +1,50 @@
+.dashboard-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    min-height: 70vh;
+}
+
+.dashboard-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 300px; /* Adjust as needed */
+}
+
+.btn3 {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(0, 115, 255);
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.user-playlists, .admin-dashboard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.playlists-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
