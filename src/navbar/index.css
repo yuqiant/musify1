@@ -17,6 +17,10 @@
     color: BLACK;
 }
 
+/* .wd-navigation .list-group-item:hover {
+    background-color: white;
+} */
+
 .wd-navigation .menu {
     padding-right: 50px;
 }

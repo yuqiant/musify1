@@ -1,36 +1,35 @@
-
-
 import React, { useState } from 'react';
+import './create.css';
 
 const PlaylistComponent = ({ playlist, onDeleteSong, onEditPlaylist }) => {
     const [isExpanded, setIsExpanded] = useState(false);
+
     const handleDeleteClick = (songId) => {
         if (window.confirm('Are you sure you want to delete this song from the playlist?')) {
             onDeleteSong(playlist._id, songId);
         }
     };
+
     const toggleSongsList = () => {
         console.log(playlist.songs);
-
-        setIsExpanded(!isExpanded); // 切换展开/收起状态
+        setIsExpanded(!isExpanded);
     };
 
     return (
-        <div style={{ marginBottom: '10px' }}>
-            <div onClick={toggleSongsList} style={{ cursor: 'pointer' }}>
-                <h3>{playlist.name}</h3>
-                <button onClick={() => onEditPlaylist(playlist._id)}>Edit</button>
+        <div className="playlist-container"> {/* Apply container class */}
+            <div onClick={toggleSongsList} className="playlist-header"> {/* Apply header class */}
+                <h3 className="playlist-title">{playlist.name}</h3> {/* Apply title class */}
+                <button className="playlist-edit-button" onClick={() => onEditPlaylist(playlist._id)}>Edit</button> {/* Apply edit button class */}
             </div>
 
             {isExpanded && (
-                <div>
-
+                <div className="playlist-songs"> {/* Apply songs list class */}
                     {playlist.songs.map(song => (
-                        <div key={song._id}>{song.songName}
-                            <button onClick={() => handleDeleteClick(song._id)}>Delete</button>
+                        <div key={song._id} className="playlist-song-item"> {/* Apply song item class */}
+                            {song.songName}
+                            <button className="song-delete-button" onClick={() => handleDeleteClick(song._id)}>Delete</button> {/* Apply delete button class */}
                         </div>
                     ))}
-
                 </div>
             )}
         </div>
