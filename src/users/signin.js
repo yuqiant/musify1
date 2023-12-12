@@ -2,7 +2,7 @@ import * as client from "./client";
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthContext";
-import './signin.css'; // Make sure the path to CSS file is correct
+import './signin.css';
 
 function Signin() {
   const [credentials, setCredentials] = useState({ username: "", password: "" });
@@ -44,7 +44,7 @@ function Signin() {
         value={credentials.password}
         onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
       />
-      <button className="btn btn-primary signin-btn" onClick={signin}>Signin</button>
+      <button className="btn btn-primary signin-btn" onClick={signin}>Sign-in</button>
       <button className="btn btn-primary signup-btn" onClick={() => navigate("/signup")}>Sign Up</button>
     </div>
   );
