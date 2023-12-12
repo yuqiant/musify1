@@ -153,20 +153,6 @@ const Dashboard = () => {
 
 
             // duplicate prob:
-            const createResponse = await axios.post(`${BASE_API}/api/users/${userId}/playlists`, {
-                name: playlistName,
-                description: description,
-                songs: []
-            });
-
-            // 更新前端的播放列表状态
-            setPlaylists([...playlists, createResponse.data]);
-
-            // 重置表单字段
-            setPlaylistName('');
-            setDescription('');
-
-            alert("Playlist created successfully!");
 
         } catch (error) {
             console.error('Error creating playlist:', error);
