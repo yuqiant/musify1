@@ -102,6 +102,44 @@ const Dashboard = () => {
     };
 
 
+
+    // const handleCreatePlaylist = async () => {
+    //     if (!playlistName || !description) {
+    //         alert("Please enter both a name and a description for the playlist.");
+    //         return;
+    //     }
+
+    //     try {
+    //         // const response = await axios.post(`${BASE_API}/api/users/${userId}/playlists`, {
+    //         //     name: playlistName,
+    //         //     description: description,
+    //         // });
+    //         //
+
+    //         // create new one in
+    //         const response = await axios.post(`${BASE_API}/api/playlists`, {
+    //             userId,  // Assuming userId is available in the component's context or state
+    //             name: playlistName,
+    //             description: description,
+    //             songs: []
+    //         });
+
+
+
+
+
+    //         setPlaylists([...playlists, response.data]);
+    //         // 重置表单字段
+    //         setPlaylistName('');
+    //         setDescription('');
+
+    //         alert("Playlist created successfully!");
+    //     } catch (error) {
+    //         console.error('Error creating playlist:', error);
+    //         alert("There was an error creating the playlist.");
+    //     }
+    // };
+
     const handleCreatePlaylist = async () => {
         if (!playlistName || !description) {
             alert("Please enter both a name and a description for the playlist.");
@@ -115,7 +153,7 @@ const Dashboard = () => {
                 description: description,
                 songs: []
             });
-
+            // 创建新的播放列表
             const createResponse = await axios.post(`${BASE_API}/api/playlists`, {
                 userId,
                 name: playlistName,
@@ -123,26 +161,24 @@ const Dashboard = () => {
                 songs: []
             });
 
-
+            // 将播放列表添加到用户的播放列表中
             const updateResponse = await axios.post(`${BASE_API}/api/users/${userId}/playlists`, {
-                userId: createResponse.data.userId,
                 playlistId: createResponse.data._id,
                 name: createResponse.data.name,
-                description: createResponse.data.description,
                 songs: createResponse.data.songs
             });
 
+            // 更新播放列表数组，但只包含 id、name 和 songs
+            // const newPlaylistForUser = {
+            //     id: createResponse.data._id,
+            //     name: createResponse.data.name,
+            //     songs: createResponse.data.songs.map(song => ({
+            //         id: song._id,
+            //         songName: song.songName
+            //     }))
+            // };
 
-            const newPlaylistForUser = {
-                id: createResponse.data._id,
-                name: createResponse.data.name,
-                songs: createResponse.data.songs.map(song => ({
-                    id: song._id,
-                    songName: song.songName
-                }))
-            };
-
-            setPlaylists([...playlists, newPlaylistForUser]);
+            setPlaylists([...playlists, updateResponse]);
 
             // 重置表单字段
             setPlaylistName('');
