@@ -28,7 +28,7 @@ function Signin() {
 
   return (
     <div className="Signin-container">
-      <h1 className="signin-heading">Signin</h1>
+      <h1 className="signin-heading">Sign-in</h1>
       {error && <div style={{ color: "red" }}>{error}</div>}
       <input
         className="signin-input"
