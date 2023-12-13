@@ -178,8 +178,7 @@ const Dashboard = () => {
             <div className="content-section">
                 <div className="playlists-section">
                     <h2>Your Playlists</h2>
-                    <div className="playlists-container">
-                        {playlists.map((playlist) => (
+                    {/* <div className="playlists-container">
                             // <div key={playlist._id} className="playlist-item">
                             //     <strong className="playlist-name">{playlist.name}</strong>
                             //     <div className="playlist-actions">
@@ -190,8 +189,8 @@ const Dashboard = () => {
                             //             Delete Playlist
                             //         </button>
                             //     </div>
-                            // </div>
-                            <div>
+                            // </div> */}
+                            <div className = "playlists-container">
                                 {playlists.map(playlist => (
                                     <PlaylistComponent key={playlist._id}
                                         playlist={playlist}
@@ -201,7 +200,6 @@ const Dashboard = () => {
                                     />
                                 ))}
                             </div>
-                        ))}
                     </div>
                 </div>
                 <div className="create-playlist-section">
@@ -224,7 +222,6 @@ const Dashboard = () => {
                     </button>
                 </div>
             </div>
-        </div>
     );
 };
 
