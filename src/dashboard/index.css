@@ -56,14 +56,12 @@
 
 /* Adjust the width for the form */
 .create-playlist-section {
-    width: 100%; /* Adjust this as needed */
-    /* Add any additional styles you want for this section */
+    width: 100%; 
 }
 
-/* Add styles for the buttons to make them align next to the playlist name */
 .playlist-item button {
-    padding: 2px 10px; /* Adjust padding as needed */
-    margin-left: 20px; /* Space out buttons from the playlist name */
+    padding: 2px 10px; 
+    margin-left: 20px; 
 }
 
 .dashboard-header {
