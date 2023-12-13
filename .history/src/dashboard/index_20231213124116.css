@@ -31,79 +31,61 @@
 }
 
 .large-input {
-    width: 100%;
+    width: 100%; 
     max-width: 200px;
 }
 
 .playlist-item {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    /* Adjust this as needed */
-    margin-bottom: 10px;
-    /* Add some space between playlist items */
+    justify-content: space-between; /* Adjust this as needed */
+    margin-bottom: 10px; /* Add some space between playlist items */
     margin-top: 10px;
 }
 
 .playlist-name {
-    font-weight: bold;
-    /* Make the playlist name bold */
+    font-weight: bold; /* Make the playlist name bold */
 }
 
 /* Additional styles for buttons to make them look more distinctive */
 .btn3 {
-    margin-top: 20px;
-    ;
-    margin: 0 10px;
-    /* Add margin around buttons */
+    margin-top: 20px;;
+    margin: 0 10px; /* Add margin around buttons */
 }
 
 /* Adjust the width for the form */
 .create-playlist-section {
-    width: 100%;
+    width: 100%; 
 }
 
 .btn4 button {
-    padding: 2px 10px;
-    margin-left: 20px;
+    padding: 2px 10px; 
+    margin-left: 20px; 
 }
 
 .dashboard-header {
-    align-items: flex-end;
-    /* Align items to the end of the container */
-    margin-bottom: 10;
-    /* Remove bottom margin if any */
+    align-items: flex-end; /* Align items to the end of the container */
+    margin-bottom: 10; /* Remove bottom margin if any */
 }
 
 .playlists-section h2 {
-    margin-top: 0;
-    /* Remove top margin to align with the playlist name */
+    margin-top: 0; /* Remove top margin to align with the playlist name */
 }
 
 .create-playlist-section h2 {
-    margin-top: 0;
-    /* Align with the top of the text boxes */
+    margin-top: 0; /* Align with the top of the text boxes */
 }
 
 /* Align the text boxes with the "Create a new Playlist" title */
 .dashboard-input {
     width: 70%;
-    margin-top: 10px;
-    /* Remove top margin to align with the title */
+    margin-top: 10px; /* Remove top margin to align with the title */
     align-items: c;
 }
 
 /* Optional: If the "Hello, Tony!" and the "Your Playlists" are not aligned properly, you may need to adjust the line height or padding of the elements */
 .dashboard-header h1,
 .playlists-section h2 {
-    line-height: 2;
-    /* Adjust line height to align text */
-    padding-top: 0;
-    /* Adjust padding to fine-tune the alignment */
-}
-
-.fa-star {
-    margin-right: 5px;
-    /* Adjust as needed */
-    /* Other styling as needed */
+    line-height: 2; /* Adjust line height to align text */
+    padding-top: 0; /* Adjust padding to fine-tune the alignment */
 }

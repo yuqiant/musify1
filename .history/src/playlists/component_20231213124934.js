@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import './create.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const PlaylistComponent = ({ playlist, onDeleteSong, onEditPlaylist, onDeletePlaylist }) => {
     const [isExpanded, setIsExpanded] = useState(false);

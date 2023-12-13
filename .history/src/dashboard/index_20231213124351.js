@@ -9,7 +9,8 @@ import PlaylistComponent from '../playlists/component';
 import AdminDashboard from './admindashboard';
 import './index.css';
 import UserTable from "../users/table";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 
 const Dashboard = () => {
@@ -180,9 +181,7 @@ const Dashboard = () => {
                 <div className="playlists-section">
                     <h2>Your Playlists</h2>
                     <div className="playlists-button">
-
                         {playlists.map((playlist) => (
-
                             <PlaylistComponent key={playlist._id}
                                 playlist={playlist}
                                 onDeleteSong={handleDeleteSongFromPlaylist}

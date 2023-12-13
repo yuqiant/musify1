@@ -20,7 +20,7 @@ const PlaylistComponent = ({ playlist, onDeleteSong, onEditPlaylist, onDeletePla
     return (
         <div className="playlist-container"> {/* Apply container class */}
             <div onClick={toggleSongsList} className="playlist-header"> {/* Apply header class */}
-                <FontAwesomeIcon icon={faStar} spin />
+                <FontAwesomeIcon icon={faStar} spin style={{ color: 'yellow' }} />
 
                 <h3 className="playlist-title">{playlist.name}</h3> {/* Apply title class */}
                 <button className="btn4 btn-primary playlist-edit-button" onClick={() => onEditPlaylist(playlist._id)}>Edit Playlist</button>
