@@ -93,19 +93,21 @@ function Account() {
           <input id="role" className="account-form-input" name="role" value={account.role} disabled />
         </div>
     
+        <div>
         <div className="account-action-buttons">
-          <button className="btn account-primary-button save-btn" onClick={save}>Save</button>
-          <button className="btn account-primary-button signout-btn" onClick={signout}>Signout</button>
+          <button className="btn btn-primary save-btn" onClick={save}>Save</button>
+          <button className="btn btn-primary signout-btn" onClick={signout}>Signout</button>
         </div>
 
         {account.role === "ADMIN" && (
           <div className="account-special-button">
-            <Link to="/admin/dashboard" className="btn account-secondary-button">User Management</Link>
+            <Link to="/admin/dashboard" className="btn btn-pimrary account-secondary-button">User Management</Link>
           </div>
+        
         )}
+        </div>
       </div>
-    </div>
-  );
+      </div>
+);
 }
-
 export default Account;

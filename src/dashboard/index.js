@@ -105,10 +105,7 @@ const Dashboard = () => {
             alert("Please enter both a name and a description for the playlist.");
             return;
         }
-
         try {
-
-            // duplicate prob:
             const createResponse = await axios.post(`${BASE_API}/api/users/${userId}/playlists`, {
                 name: playlistName,
                 description: description,
@@ -116,7 +113,6 @@ const Dashboard = () => {
             });
 
             setPlaylists([...playlists, createResponse.data]);
-
             setPlaylistName('');
             setDescription('');
 
@@ -129,24 +125,27 @@ const Dashboard = () => {
     };
 
     const renderCreatePlaylistForm = () => (
-        <div className="dashboard-form">
+        <div className="create-playlist-section">
             <h2>Create a new Playlist</h2>
             <input
-                className="dashboard-input"
+                className="dashboard-input large-input"
                 type="text"
                 placeholder="Playlist Name"
                 value={playlistName}
                 onChange={(e) => setPlaylistName(e.target.value)}
             />
             <textarea
-                className="dashboard-input"
+                className="dashboard-input large-input"
                 placeholder="Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
             />
-            <button className="btn3 btn-primary dashboard-btn" onClick={handleCreatePlaylist}>Create Playlist</button>
+            <button className="btn3 btn-primary dashboard-btn" onClick={handleCreatePlaylist}>
+                Create Playlist
+            </button>
         </div>
     );
+
 
     const handleDeletePlaylist = async (playlistId) => {
         if (window.confirm('Are you sure you want to delete this playlist?')) {
@@ -166,40 +165,55 @@ const Dashboard = () => {
         }
     };
 
+    if (!userData) {
+        return <div>Loading user data...</div>;
+    }
+
+
     return (
         <div className="dashboard-section">
-            <h1>Hello, <b>{userData.firstName}!</b></h1>
-
-            {userData.role === 'USER' && (
-                <div className="user-playlists">
+            <div className="dashboard-header">
+                <h1>Hello, <b>{userData.firstName}!</b></h1>
+            </div>
+            <div className="content-section">
+                <div className="playlists-section">
                     <h2>Your Playlists</h2>
                     <div className="playlists-container">
-                        {playlists.map(playlist => (
-                            <PlaylistComponent key={playlist._id}
-                                playlist={playlist}
-                                onDeleteSong={handleDeleteSongFromPlaylist}
-                                onEditPlaylist={handleEditPlaylist}
-                                onDeletePlaylist={handleDeletePlaylist}
-                            />
+                        {playlists.map((playlist) => (
+                            <div key={playlist._id} className="playlist-item">
+                                <strong className="playlist-name">{playlist.name}</strong>
+                                <div className="playlist-actions">
+                                    <button className="btn btn-primary btn3" onClick={() => handleEditPlaylist(playlist._id)}>
+                                        Edit Playlist
+                                    </button>
+                                    <button className="btn btn-primary btn3" onClick={() => handleDeletePlaylist(playlist._id)}>
+                                        Delete Playlist
+                                    </button>
+                                </div>
+                            </div>
                         ))}
                     </div>
-                    {renderCreatePlaylistForm()}
                 </div>
-            )}
-            {userData.role === 'DJ' && (
-                <div className="admin-dashboard">
-                    <h3>Song Management</h3>
-                    <AdminDashboard
-                        onAddSong={handleAddSong}
-                        onEditSong={handleEditSong}
-                        onDeleteSong={handleDeleteSong}
+                <div className="create-playlist-section">
+                    <h2>Create a new Playlist</h2>
+                    <input
+                        className="dashboard-input"
+                        type="text"
+                        placeholder="Playlist Name"
+                        value={playlistName}
+                        onChange={(e) => setPlaylistName(e.target.value)}
                     />
+                    <textarea
+                        className="dashboard-input"
+                        placeholder="Description"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                    />
+                    <button className="btn btn-primary btn3 dashboard-btn" onClick={handleCreatePlaylist}>
+                        Create Playlist
+                    </button>
                 </div>
-            )}
-
-            {userData.role === 'ADMIN' && (
-                <UserTable />
-            )}
+            </div>
         </div>
     );
 };

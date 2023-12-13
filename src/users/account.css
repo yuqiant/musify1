@@ -34,34 +34,13 @@
     margin: 5px 0; /* Vertical margin for spacing */
 }
 
-.account-action-button {
-    width: auto;
-    padding: 10px 20px;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    cursor: pointer;
-}
-
 .account-primary-button {
     background-color: #007bff;
     color: white;
     border-color: #007bff;
     display:flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px 0;
 }
-/* 
-.account-secondary-button {
-    background-color: #6c757d;
-    color: white;
-    border-color: #6c757d;
-        display:flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px 0;
-} */
+
 
 .error-message {
     color: red;
