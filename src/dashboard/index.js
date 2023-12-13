@@ -180,16 +180,26 @@ const Dashboard = () => {
                     <h2>Your Playlists</h2>
                     <div className="playlists-container">
                         {playlists.map((playlist) => (
-                            <div key={playlist._id} className="playlist-item">
-                                <strong className="playlist-name">{playlist.name}</strong>
-                                <div className="playlist-actions">
-                                    <button className="btn btn-primary btn3" onClick={() => handleEditPlaylist(playlist._id)}>
-                                        Edit Playlist
-                                    </button>
-                                    <button className="btn btn-primary btn3" onClick={() => handleDeletePlaylist(playlist._id)}>
-                                        Delete Playlist
-                                    </button>
-                                </div>
+                            // <div key={playlist._id} className="playlist-item">
+                            //     <strong className="playlist-name">{playlist.name}</strong>
+                            //     <div className="playlist-actions">
+                            //         <button className="btn btn-primary btn3" onClick={() => handleEditPlaylist(playlist._id)}>
+                            //             Edit Playlist
+                            //         </button>
+                            //         <button className="btn btn-primary btn3" onClick={() => handleDeletePlaylist(playlist._id)}>
+                            //             Delete Playlist
+                            //         </button>
+                            //     </div>
+                            // </div>
+                            <div>
+                                {playlists.map(playlist => (
+                                    <PlaylistComponent key={playlist._id}
+                                        playlist={playlist}
+                                        onDeleteSong={handleDeleteSongFromPlaylist}
+                                        onEditPlaylist={handleEditPlaylist}
+                                        onDeletePlaylist={handleDeletePlaylist}
+                                    />
+                                ))}
                             </div>
                         ))}
                     </div>
