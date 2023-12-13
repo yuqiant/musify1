@@ -19,8 +19,8 @@ const PlaylistComponent = ({ playlist, onDeleteSong, onEditPlaylist, onDeletePla
         <div className="playlist-container"> {/* Apply container class */}
             <div onClick={toggleSongsList} className="playlist-header"> {/* Apply header class */}
                 <h3 className="playlist-title">{playlist.name}</h3> {/* Apply title class */}
-                <button className="btn4 btn-primary playlist-edit-button" onClick={() => onEditPlaylist(playlist._id)}>Edit</button> {/* Apply edit button class */}
-                <button className="btn4 btn-primary" onClick={() => onDeletePlaylist(playlist._id)}>Cancel</button>
+                <button className="btn4 btn-primary playlist-edit-button" onClick={() => onEditPlaylist(playlist._id)}>Edit Playlist</button>
+                <button className="btn4 btn-primary" onClick={() => onDeletePlaylist(playlist._id)}>Delete Playlist</button>
             </div>
 
             {isExpanded && (
@@ -28,7 +28,7 @@ const PlaylistComponent = ({ playlist, onDeleteSong, onEditPlaylist, onDeletePla
                     {playlist.songs.map(song => (
                         <div key={song._id} className="playlist-song-item"> {/* Apply song item class */}
                             {song.songName}
-                            <button className="song-delete-button" onClick={() => handleDeleteClick(song._id)}>Delete</button> {/* Apply delete button class */}
+                            <button className="btn btn-primary song-delete-button" onClick={() => handleDeleteClick(song._id)}>Delete Song</button>
                         </div>
                     ))}
                 </div>

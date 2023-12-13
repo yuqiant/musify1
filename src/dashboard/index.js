@@ -178,28 +178,15 @@ const Dashboard = () => {
             <div className="content-section">
                 <div className="playlists-section">
                     <h2>Your Playlists</h2>
-                    {/* <div className="playlists-container">
-                            // <div key={playlist._id} className="playlist-item">
-                            //     <strong className="playlist-name">{playlist.name}</strong>
-                            //     <div className="playlist-actions">
-                            //         <button className="btn btn-primary btn3" onClick={() => handleEditPlaylist(playlist._id)}>
-                            //             Edit Playlist
-                            //         </button>
-                            //         <button className="btn btn-primary btn3" onClick={() => handleDeletePlaylist(playlist._id)}>
-                            //             Delete Playlist
-                            //         </button>
-                            //     </div>
-                            // </div> */}
-                            <div className = "playlists-container">
-                                {playlists.map(playlist => (
-                                    <PlaylistComponent key={playlist._id}
-                                        playlist={playlist}
-                                        onDeleteSong={handleDeleteSongFromPlaylist}
-                                        onEditPlaylist={handleEditPlaylist}
-                                        onDeletePlaylist={handleDeletePlaylist}
-                                    />
-                                ))}
-                            </div>
+                    <div className="playlists-button">
+                        {playlists.map((playlist) => (
+                            <PlaylistComponent key={playlist._id}
+                                playlist={playlist}
+                                onDeleteSong={handleDeleteSongFromPlaylist}
+                                onEditPlaylist={handleEditPlaylist}
+                                onDeletePlaylist={handleDeletePlaylist}
+                            />
+                        ))}
                     </div>
                 </div>
                 <div className="create-playlist-section">
@@ -217,12 +204,12 @@ const Dashboard = () => {
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                     />
-                    <button className="btn btn-primary btn3 dashboard-btn" onClick={handleCreatePlaylist}>
+                    <button className="btn3 btn-primary dashboard-btn" onClick={handleCreatePlaylist}>
                         Create Playlist
                     </button>
                 </div>
             </div>
+        </div>
     );
-};
-
+}
 export default Dashboard;

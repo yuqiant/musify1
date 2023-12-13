@@ -31,11 +31,10 @@
 }
 
 .large-input {
-    width: 100%; /* Make text fields take the full width */
-    max-width: 200px; /* Set a maximum width for larger screens */
+    width: 100%; 
+    max-width: 200px;
 }
 
-/* Style for the playlist items */
 .playlist-item {
     display: flex;
     align-items: center;
@@ -59,7 +58,7 @@
     width: 100%; 
 }
 
-.playlist-item button {
+.btn4 button {
     padding: 2px 10px; 
     margin-left: 20px; 
 }
