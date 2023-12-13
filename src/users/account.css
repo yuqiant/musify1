@@ -1,32 +1,69 @@
-.account-section {
+.account-main-section {
     display: flex;
     flex-direction: column;
-    align-items: center; /* This ensures horizontal centering of children */
-    justify-content: center; /* This ensures vertical centering */
-    width: 100%; /* Takes the full width */
-    max-width: 800px; /* Adjust this as necessary */
-    margin: auto; /* Centers the section within its parent */
-    min-height: 70vh; /* Adjust this as necessary */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    min-height: 70vh;
 }
 
-.account-form {
-    width: 100%; /* Takes the full width of its parent */
+.account-page-form {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* This ensures horizontal centering of children */
+    align-items: center;
 }
 
-.account-row,
-.account-actions,
-.special-button,
-.button-container {
-    width: 100%; /* Takes the full width of its parent */
+.account-form-row,
+.account-action-buttons,
+.account-special-button {
+    width: 100%;
     display: flex;
-    justify-content: center; /* Centers children horizontally */
-    align-items: center; /* Centers children vertically */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Consistent bottom margin for spacing */
 }
 
-/* Remove any specific margin that might be causing the shift */
-.save-btn {
-    margin-left:  630px;
+.account-form-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 300px; /* Adjust width as necessary */
+    margin: 5px 0; /* Vertical margin for spacing */
+}
+
+.account-action-button {
+    width: auto;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.account-primary-button {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+}
+/* 
+.account-secondary-button {
+    background-color: #6c757d;
+    color: white;
+    border-color: #6c757d;
+        display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+} */
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
 }

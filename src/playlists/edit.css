@@ -1,0 +1,65 @@
+.edit-playlist-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 60%; /* Adjust width as needed */
+    margin: auto;
+    padding: 20px;
+}
+
+.edit-playlist-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.edit-playlist-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.edit-playlist-label {
+    margin-bottom: 5px;
+}
+
+.edit-playlist-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 40px;
+}
+
+.edit-playlist-textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    height: 300px;
+}
+
+.edit-playlist-buttons {
+    display: flex;
+    flex-direction: column; /* Change to column for vertical alignment */
+    align-items: center; /* Center align the buttons */
+    width: 100%;
+}
+
+.edit-playlist-save-button,
+.edit-playlist-cancel-button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: auto; /* Adjust width as needed */
+}
+
+.edit-playlist-save-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.edit-playlist-cancel-button {
+    background-color: #6c757d;
+    color: white;
+}

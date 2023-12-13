@@ -64,57 +64,48 @@ function Account() {
   const goBack = () => navigate('/'); // go back to home
 
   return (
-
-    <div className="account-section">
-      {/* <div>
-        <button onClick={goBack} className="btn"> Back</button>
-      </div> */}
+    <div className="account-main-section">
       <h1 className="account-heading">Profile</h1>
       {error && <div className="error-message">{error}</div>}
-      <div className="account-form">
-        <div className="account-row">
+      <div className="account-page-form">
+        <div className="account-form-row">
           <label htmlFor="firstName">First Name</label>
-          <input id="firstName" className="account-input" name="firstName" value={account.firstName} onChange={handleChange} />
+          <input id="firstName" className="account-form-input" name="firstName" value={account.firstName} onChange={handleChange} />
         </div>
 
-        <div className="account-row">
+        <div className="account-form-row">
           <label htmlFor="lastName">Last Name</label>
-          <input id="lastName" className="account-input" name="lastName" value={account.lastName} onChange={handleChange} />
+          <input id="lastName" className="account-form-input" name="lastName" value={account.lastName} onChange={handleChange} />
         </div>
 
-        <div className="account-row">
+        <div className="account-form-row">
           <label htmlFor="dob">Date of Birth</label>
-          <input id="dob" className="account-input" type="date" name="dob" value={account.dob} onChange={handleChange} />
+          <input id="dob" className="account-form-input" type="date" name="dob" value={account.dob} onChange={handleChange} />
         </div>
 
-        <div className="account-row">
+        <div className="account-form-row">
           <label htmlFor="email">Email</label>
-          <input id="email" className="account-input" name="email" value={account.email} onChange={handleChange} />
+          <input id="email" className="account-form-input" name="email" value={account.email} onChange={handleChange} />
         </div>
 
-        <div className="account-row">
+        <div className="account-form-row">
           <label htmlFor="role">Role</label>
-          <select id="role" className="account-input" name="role" value={account.role} onChange={handleChange}>
-            <option value="USER">User</option>
-            <option value="ADMIN">Admin</option>
-            <option value="DJ">DJ</option>
-          </select>
+          <input id="role" className="account-form-input" name="role" value={account.role} disabled />
+        </div>
+    
+        <div className="account-action-buttons">
+          <button className="btn account-primary-button save-btn" onClick={save}>Save</button>
+          <button className="btn account-primary-button signout-btn" onClick={signout}>Signout</button>
         </div>
 
-        <div className="account-actions">
-          <button className="btn btn-primary save-btn" onClick={save}>Save</button>
-          <button className="btn btn-primary signout-btn" onClick={signout}>Signout</button>
-        </div>
-
-        <div className="special-button">
         {account.role === "ADMIN" && (
-          <Link to="/admin/dashboard" className="btn btn-secondary">User Management</Link>
+          <div className="account-special-button">
+            <Link to="/admin/dashboard" className="btn account-secondary-button">User Management</Link>
+          </div>
         )}
-        </div>
-        <div class="button-container">
-      </div>
       </div>
     </div>
   );
-        }
+}
+
 export default Account;
